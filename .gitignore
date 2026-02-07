@@ -1,0 +1,25 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# secrets
+.env
+
+# tests
+test.py
+
+# dump files
+item.csv
+soup.json
+dc_bot.drawio.png
+http.json
+
+# kick-start
+app.py
