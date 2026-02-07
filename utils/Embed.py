@@ -33,10 +33,10 @@ class ItemPriceEmbed:
                     f"物品個數{world_stat['nq']['count']:>12}{world_stat['hq']['count']:>17}",
                     "\n",
                     "每件",
-                    f"最低售價{world_stat['nq']['min_per_unit']['price']:>12,}{'(' + str(world_stat['nq']['min_per_unit']['count']) + ')':<5}{world_stat['hq']['min_per_unit']['price']:>12,}({world_stat['hq']['min_per_unit']['count']})",
+                    f"最低{world_stat['nq']['min_per_unit']['price']:>14,}{'(' + str(world_stat['nq']['min_per_unit']['count']) + ')':<5}{world_stat['hq']['min_per_unit']['price']:>12,}({world_stat['hq']['min_per_unit']['count']})",
                     "\n",
                     "每列",
-                    f"最低售價{world_stat['nq']['min_total']['price']:>12,}{'(' + str(world_stat['nq']['min_total']['count']) + ')':<5}{world_stat['hq']['min_total']['price']:>12,}({world_stat['hq']['min_total']['count']})",
+                    f"最低{world_stat['nq']['min_total']['price']:>14,}{'(' + str(world_stat['nq']['min_total']['count']) + ')':<5}{world_stat['hq']['min_total']['price']:>12,}({world_stat['hq']['min_total']['count']})",
                     "```",
                 ]
             )
