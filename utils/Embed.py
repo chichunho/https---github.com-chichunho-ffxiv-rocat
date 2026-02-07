@@ -29,8 +29,8 @@ class ItemPriceEmbed:
                 [
                     "```",
                     f"{'NQ':>14}{'HQ':>12}",
-                    f"市場列數{world_stat['nq']['listings_count']:>7}{world_stat['hq']['listings_count']:>12}",
-                    f"物品個數{world_stat['nq']['count']:>7}{world_stat['hq']['count']:>12}",
+                    f"市場列數{world_stat['nq']['listings_count']:>7}{world_stat['hq']['listings_count']:>15}",
+                    f"物品個數{world_stat['nq']['count']:>7}{world_stat['hq']['count']:>15}",
                     "\n",
                     "每件",
                     f"最低{world_stat['nq']['min_per_unit']['price']:>10,}{'(' + str(world_stat['nq']['min_per_unit']['count']) + ')':<5}{world_stat['hq']['min_per_unit']['price']:>10,}({world_stat['hq']['min_per_unit']['count']})",
