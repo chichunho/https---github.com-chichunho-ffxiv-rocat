@@ -7,6 +7,7 @@ import pytz
 from discord.ext import commands
 from dotenv import load_dotenv
 
+from app import keep_alive
 from models.CommandRequest import CommandRequest
 from universalisChef.Chef import Chef
 from utils.CommandDecoder import CommandDecoder
@@ -14,6 +15,8 @@ from Waitress.GambleWaitress import GambleWaitress
 from Waitress.Waitress import Waitress
 
 load_dotenv()
+
+keep_alive()
 
 
 class HttpSession:
@@ -174,5 +177,4 @@ async def on_ready():
     chef = Chef(world_dict, item_dict, local_tz)
 
 
-if __name__ == "__main__":
-    bot.run(os.getenv("BOT_TOKEN"))
+bot.run(os.getenv("BOT_TOKEN"))
