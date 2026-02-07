@@ -28,7 +28,7 @@ class ItemPriceEmbed:
             field_value = "\n".join(
                 [
                     "```",
-                    f"{'NQ':>14}{'HQ':>12}",
+                    f"{'NQ':>14}{'HQ':>15}",
                     f"市場列數{world_stat['nq']['listings_count']:>7}{world_stat['hq']['listings_count']:>15}",
                     f"物品個數{world_stat['nq']['count']:>7}{world_stat['hq']['count']:>15}",
                     "\n",
