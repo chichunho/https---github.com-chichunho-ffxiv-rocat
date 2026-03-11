@@ -11,7 +11,7 @@ from market.itemdict import ItemDict
 from worker.pricechecker import PriceChecker
 
 load_dotenv(".env")
-CMD_TREE_GUILDS = [discord.object(guild) for guild in os.getenv("GUILD").split(",")]
+CMD_TREE_GUILDS = [discord.Object(int(guild)) for guild in os.getenv("GUILD").split(",")]
 
 
 class HttpSession:
@@ -108,7 +108,11 @@ async def alias(ctx: commands.Context, item_name, item_nickname):
     #     await ctx.send(f"{item_nickname} is an alias of item {item_dict[item_nickname]}")
 
 
-@bot.tree.command(name="ffxiv-market-buy", description="亞拉戈機械貓 - 繁中市場查價")
+@bot.tree.command(
+    name="ffxiv-market-buy",
+    description="亞拉戈機械貓 - 繁中市場查價",
+    guilds=CMD_TREE_GUILDS,
+)
 async def buy(interaction: discord.Interaction):
     global item_dict, world_dict, bot_http_session, local_tz
 

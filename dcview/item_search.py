@@ -1,8 +1,8 @@
 import discord
 
-from market.itemdict import AdvancedSearchOption
 from dcview.enums import ReplyOption
 from dcview.protocol import ItemSearchForm
+from market.itemdict import AdvancedSearchOption
 
 
 class ItemSearchView(discord.ui.Modal, ItemSearchForm):
@@ -11,7 +11,7 @@ class ItemSearchView(discord.ui.Modal, ItemSearchForm):
 
     _master_keyword = discord.ui.Label(
         text="物品關鍵字",
-        description="物品編號, 正體中文字詞, 拚音首字母, 萬用字符(*)\n例如: 納夏鞣革, 納夏, nxrg, 納**g",
+        description="物品編號, 正體中文字詞, 拚音首字母, 萬用字符(*) 例如: 納夏鞣革, 納革, nxrg, 納**g",
         component=discord.ui.TextInput(
             placeholder="",
         ),
@@ -19,7 +19,7 @@ class ItemSearchView(discord.ui.Modal, ItemSearchForm):
 
     _filter_keyword = discord.ui.Label(
         text="包含字詞",
-        description="物品必包含以上字詞, 如有多個字詞, 請以空格分開",
+        description="搜尋結果必須包含的字詞, 如有多個字詞, 請以空格分開",
         component=discord.ui.TextInput(
             placeholder="",
             required=False,
@@ -92,9 +92,7 @@ class ItemSearchView(discord.ui.Modal, ItemSearchForm):
     @property
     def search_options(self):
         assert isinstance(self._search_options.component, discord.ui.CheckboxGroup)
-        return set(
-            [AdvancedSearchOption(val) for val in self._search_options.component.values]
-        )
+        return set([AdvancedSearchOption(val) for val in self._search_options.component.values])
 
     @property
     def reply_option(self):
