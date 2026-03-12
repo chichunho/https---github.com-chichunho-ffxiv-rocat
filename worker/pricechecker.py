@@ -55,13 +55,11 @@ class PriceChecker(Worker):
             items = self.item_dict.search(
                 keyword,
                 check_options=check_options,
-                case_insensitive=(
-                    AdvancedSearchOption.OPT_CASE_INSENSITIVE in check_options
-                ),
+                case_insensitive=(AdvancedSearchOption.OPT_CASE_INSENSITIVE in check_options),
             )
 
             # single match treat as perfect match
-            if AdvancedSearchOption.OPT_SINGLE_IS_PERFECT.value in check_options:
+            if AdvancedSearchOption.OPT_SINGLE_IS_PERFECT in check_options:
                 target_item = items[0] if len(items) == 1 else None
 
         # dm the user or not
